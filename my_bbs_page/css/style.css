@@ -1,0 +1,28 @@
+/* 全ページ共通 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+html {
+    font-size: 16px;
+    font-family: "Noto Sans JP", sans-serif;
+    color: #333;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0 0 0 0;
+}
+p, li, td {
+    line-height: 1.7;
+}
+img {
+    max-width: 100%;
+}
+
+/* 会員登録 */
+.required {
+    background-color: red;
+    color: white;
+}
+.error {
+    color: red;
+}
