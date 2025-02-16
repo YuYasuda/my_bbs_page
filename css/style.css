@@ -16,6 +16,101 @@ p, li, td {
 }
 img {
     max-width: 100%;
+    
+}
+a:link {
+    color: #1D9BF0;
+    text-decoration: none;
+}
+a:visited {
+    color: #1D9BF0;
+    text-decoration: none;
+}
+a:hover {
+    color: #1D9BF0;
+    text-decoration: underline;
+}
+a:active {
+    color: #1D9BF0;
+    text-decoration: underline;
+}
+h2 {
+    border-left: 7px solid cornflowerblue;
+    margin: 20px 8%;
+    padding: 8px 10px;
+}
+button {
+    background-color: #1D9BF0;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 0;
+    margin: 5px;
+}
+.button {
+    background-color: #1D9BF0;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 0;
+    margin: 5px;
+}
+
+/* 全ページ共通　ヘッダー */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: end;
+    margin: 0 30px;
+}
+nav li {
+    list-style:none;
+    background-color: cornflowerblue;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: transform 0.3s ease; /* アニメーションの時間と効果 */
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+}
+nav a:link {
+    color: white;
+    text-decoration: none;
+}
+nav a:visited {
+    color: white;
+    text-decoration: none;
+}
+nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+nav li:hover {
+    transform: scale(1.1); /* 1.1倍に拡大 */
+}
+nav a:active {
+    color: white;
+    text-decoration: underline;
+}
+header {
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    align-items: flex-end;
+    border-bottom: 8px solid cornflowerblue;
+}
+h1 {
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
+    2px 3px 4px rgba(0, 0, 0, 0.5);
+    margin: 10px 30px;
+}
+
+/* 全ページ共通 メイン */
+main {
+    background-image: linear-gradient(120deg, #c2e9fb 0%, #a1c4fd 100%);
+    margin: 30px auto;
+    padding: 25px 25px 30px 25px;
+    border-radius: 10px;
+    max-width: 70%;
 }
 
 /* 会員登録 */
@@ -25,4 +120,169 @@ img {
 }
 .error {
     color: red;
+}
+
+/* 登録、確認、ログインページ */
+dl {
+    display: flex;
+    flex-direction: column; /* 垂直に配置 */
+    gap: 8px;
+}
+
+/* index、post_index */
+.name {
+    vertical-align: top;
+    font-weight: bold;
+    margin: 5px 10px;
+    font-size: 1.1rem;
+}
+main hr {
+    margin: 15px -25px;
+    border: none; /* ボーダーをなしに */
+    height: 0.5px; /* 0.5pxの細さ */
+    background-color: #8B99A6; /* 線の色 */
+}
+form {
+    margin: -20px 20px 30px 20px;
+}
+.paging {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    padding: 0;
+    margin: 10px 0 -5px 0;
+}
+.post-image {
+    width: 100%;  /* 親要素に対して100%の幅 */
+    height: auto; /* 自動で高さを調整 */
+    max-width: 300px; /* 最大幅を指定（必要に応じて調整） */
+    max-height: 200px; /* 最大高さを指定（必要に応じて調整） */
+    object-fit: cover; /* 画像の表示方法を調整 */
+}
+/* 増やしたとこ */
+.others {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.good img {
+    width: 25px;
+    height: auto;
+}
+.good form {
+    margin: 0;
+}
+.good button {
+    padding: 3px 10px;
+    display: flex;                /* Flexboxを使用 */
+    align-items: center; 
+    gap: 2px;
+    margin: 0 5px -3px 5px;
+}
+/* ここまで */
+
+    /* グリッドレイアウト */
+    .msg {
+        display: grid;
+        grid-template-columns: auto 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+        "mem_pic name name"
+        "mem_pic content content"
+        "mem_pic post_pic post_pic"
+        "others others others";
+        max-width: 100%;
+    }
+    .rep_msg {
+        display: grid;
+        grid-template-columns: 0.1fr auto 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+        "rep_col mem_pic name name"
+        "rep_col mem_pic content content"
+        "rep_col mem_pic post_pic post_pic"
+        "rep_col others others others";
+        max-width: 100%;
+    }
+    .rep_col {
+        grid-area: rep_col;
+        border-left: 3px solid #9aa2a9; /* 左側に縦線を引く */
+        height: 95%; /* 縦に引き延ばす */
+    }
+    .mem_pic {
+        grid-area: mem_pic;
+    }
+    .name {
+        grid-area: name;
+    }
+    .content {
+        grid-area: content;
+        word-wrap: break-word; /* 古いブラウザ用 */
+        overflow-wrap: break-word; /* 新しいブラウザ用 */
+        white-space: normal; /* 通常の折り返しを有効にする */
+        max-width: 100%; /* 親要素からはみ出さないように設定 */
+        margin: 0 0 0 10px;
+    }
+    .post_pic {
+        grid-area: post_pic;
+        max-width: 100%;
+    }
+    .post_pic img {
+        max-width: 100%;
+        width: auto;
+        margin: 0 0 0 10px;
+    }
+    .others {
+        grid-area: others;
+    }
+
+/* モバイル対応 */
+@media (max-width: 767px) {
+    nav ul {
+        margin: 0 10px;
+        padding: 0;
+        justify-content: center;
+        gap: 10px;
+    }
+    nav li {
+        font-size: 0.8rem;
+        padding: 10px 10px;
+    }
+    nav li:active {
+        transform: scale(1.1); /* 1.1倍に拡大 */
+    }
+    main {
+        padding: 2% 4%;
+        margin: 20px auto;
+        max-width: 90%;
+    }
+    main hr {
+        margin: 15px -15px;
+        border: none; /* ボーダーをなしに */
+        height: 0.5px; /* 0.5pxの細さ */
+        background-color: #8B99A6; /* 線の色 */
+    }
+    form {
+        margin: 0px 20px 30px 20px;
+        padding: 10px 0 0 0;
+    }
+    form textarea {
+        width: 95%;
+    }
+    .post dd {
+        margin-left: 15px;
+    }
+    .post_pic img {
+        max-height: 200px;
+        width: auto;
+    }
+    .paging {
+        padding: 0 0 10px 0px;
+    }
+
 }

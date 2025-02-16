@@ -8,10 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>会員登録</h1>
+<header>
+<?php require('../header.php'); ?>
+</header>
+    <h2>会員登録</h2>
+    <main>
     <div class="signup">
     <p>ユーザー登録が完了しました</p>
-    <p><a href="../">ログインする</a></p>
+    <p><a href="../login.php">ログインする</a></p>
     </div>
+    </main>
 </body>
 </html>

@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['join'])) {
-    header('Location: signup.php');
+    header('Location: index.php');
     exit();
 }
 
@@ -30,8 +30,12 @@ if (!empty($_POST)) {
     <link rel="stylesheet" href="../css/style.css">
     <title>会員登録</title>
 </head>
+<header>
+<?php require('../header.php'); ?>
+</header>
 <body>
-    <h1>会員登録</h1>
+    <h2>会員登録</h2>
+    <main>
     <div class="signup">
     <form action="" method="post">
         <input type="hidden" name="action" value="submit">
@@ -53,9 +57,9 @@ if (!empty($_POST)) {
                 <img src="../member_picture/<?php echo htmlspecialchars($_SESSION['join']['image'] ?? "", ENT_QUOTES); ?>" width="100" height="100" alt="">
             </dd>
         </dl>
-        <div><a href="signup.php?action=rewrite">&laquo;&nbsp;書き直す</a> | <input type="submit" value="登録する"></div>
+        <div><a href="index.php?action=rewrite">&laquo;&nbsp;書き直す</a> | <input type="submit" value="登録する"></div>
     </form>
-
     </div>
+    </main>
 </body>
 </html>
