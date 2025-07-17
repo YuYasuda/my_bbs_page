@@ -1,7 +1,40 @@
 ・css/style.cssにリンクしてください
- →例：<link rel="stylesheet" href="../css/style.css">
+　→例：<link rel="stylesheet" href="../css/style.css">
 　→joinフォルダからcssフォルダにアクセスする時のファイルパス
 ・コンテンツは<main>の中に入れてください
-・body内の最初の行にherderを作り、中に<?php require('../header.html'); ?>を記述してください
+・body内の最初の行にherderを作り、中に<?php require('../header.php'); ?>を記述してください
+　→ここもファイルの場所によってファイルパスは変更してください。
+
+
+【h1～タグ】
 ・h1 タイトル部分
 ・h2 mainコンテンツ内のタイトル
+
+【タイムラインのcssについて】
+・formタグにpostクラスをつけてください
+
+<hr>　※　foreachの上に1つ<hr>置いてください
+<?php
+foreach ($posts as $post):
+?>
+    <div class="msg">
+        <div class="mem_pic">
+	　※　ユーザー画像の表示部分をmem_picクラスで囲んでください
+        </div>
+        <span class="name">
+	　※　ユーザーネームの表示部分をnameクラスで囲んでください
+	</span>
+        <p class="content">
+	　※　投稿本文の表示部分をcontentクラスで囲んでください
+	</p>
+        <div class="post_pic">
+        　※　投稿写真の表示部分をpost_picクラスで囲んでください
+        </div>
+        <div class="others">
+        　※　投稿時間、削除、返信、いいね等をothersクラスで囲んでください
+        </div>
+    </div>
+    <hr>　※　<hr>をmsgクラスの外かつforeachの中になる場所に置いてください
+<?php
+endforeach;
+?>

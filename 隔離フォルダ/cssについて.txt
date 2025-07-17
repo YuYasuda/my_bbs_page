@@ -1,0 +1,7 @@
+・css/style.cssにリンクしてください
+ →例：<link rel="stylesheet" href="../css/style.css">
+　→joinフォルダからcssフォルダにアクセスする時のファイルパス
+・コンテンツは<main>の中に入れてください
+・body内の最初の行にherderを作り、中に<?php require('../header.html'); ?>を記述してください
+・h1 タイトル部分
+・h2 mainコンテンツ内のタイトル

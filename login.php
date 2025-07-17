@@ -1,9 +1,7 @@
-<?php
-require('dbconnect.php');
-$error = [];
-
+<?php require('dbconnect.php'); ?>
+<?php 
 session_start();
-
+$error = [];
 //クッキーから自動で記入されるようにする
 if (isset($_COOKIE['email']) && $_COOKIE['email'] != '') {
     $_POST['email'] = $_COOKIE['email'];
@@ -31,7 +29,7 @@ if (!empty($_POST)) {
                 setcookie('password', $_POST['password'], time()+60*60*24*14);
             }
 
-            header('Location: ./post/index.php'); exit();
+            header('Location:index.php'); exit();
         } else {
             $error['login'] = 'failed';
         }
@@ -40,6 +38,23 @@ if (!empty($_POST)) {
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0", shrink-to-fit="no">
+     <link rel="stylesheet" href="css/style.css">
+    <title>ログインページ</title>
+            
+</head>
+<body>
+    <header>
+        <?php
+        require('header.php');
+        ?>
+    </header>
+    <h2>ログインページ</h2>
+    <main>
 
 <div id="lead">
     <p>メールアドレスとパスワードを記入してログインしてください。</p>
@@ -69,5 +84,8 @@ if (!empty($_POST)) {
             <!-- <label>で文字を押しても反応するようにする -->
         </dd>
     </dl>
-    <div><input type="submit" value="ログインする" /></div>
+    <div><input type="submit" value="ログインする" class="button"></div>
 </form>
+    </main>
+</body>
+</html>

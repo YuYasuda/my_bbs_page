@@ -37,8 +37,13 @@ if (!empty($_POST)) {
 
     if (empty($error)) {
         // 画像をアップロードする
-        $image = date('YmdHis') . $_FILES['image']['name'];
-        move_uploaded_file($_FILES['image']['tmp_name'], '../member_picture/' . $image);
+        if (!empty($file_name)) {
+            $image = date('YmdHis') . $_FILES['image']['name'];
+            move_uploaded_file($_FILES['image']['tmp_name'], '../member_picture/' . $image);
+        } else {
+            // 画像がアップロードされなかった場合はデフォルト画像を設定
+            $image = 'default.png';
+        }
         $_SESSION['join'] = $_POST;
         $_SESSION['join']['image'] = $image;
         header('Location: check.php');
@@ -61,7 +66,11 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'rewrite') {
     <title>会員登録</title>
 </head>
 <body>
-    <h1>会員登録</h1>
+    <header>
+    <?php require('../header.php'); ?>
+    </header>
+    <h2>会員登録</h2>
+    <main>
     <div class="signup">
     <p>次のフォームに必要事項をご記入ください。</p>
     <form action="" method="post" enctype="multipart/form-data">
@@ -103,9 +112,9 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] == 'rewrite') {
                 <?php endif; ?>
             </dd>
         </dl>
-        <div><input type="submit" value="入力内容を確認する"></div>
+        <div><input type="submit" value="入力内容を確認する" class="button"></div>
     </form>
-
     </div>
+    </main>
 </body>
 </html>

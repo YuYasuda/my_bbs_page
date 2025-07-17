@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>ログアウト</title>
 </head>
 <body>
     <?php
@@ -24,9 +25,15 @@
     setcookie('email','',time()-3600);
     setcookie('password','',time()-3600);
 
+    // トップページにリダイレクト
+    echo '<script>
+    alert("ログアウトしました。トップページに戻ります。");
+    window.location.href = "index.php"; // トップページにリダイレクト
+    </script>';
+    exit; // スクリプトの終了
+
     header('Location: index.php');
     exit();
     ?>
-
 </body>
 </html>

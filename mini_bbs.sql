@@ -2,8 +2,13 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD
 -- ホスト: 127.0.0.1
 -- 生成日時: 2024-10-22 15:53:16
+=======
+-- ホスト: 127.0.0.1:3306
+-- 生成日時: 2025-02-16 15:59:53
+>>>>>>> e10f27e20df9ddc13f771ba39afad4e985f9a9aa
 -- サーバのバージョン： 10.4.32-MariaDB
 -- PHP のバージョン: 8.2.12
 
@@ -24,6 +29,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
+=======
+-- テーブルの構造 `goods`
+--
+
+CREATE TABLE `goods` (
+  `id` int(11) NOT NULL,
+  `post_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+>>>>>>> e10f27e20df9ddc13f771ba39afad4e985f9a9aa
 -- テーブルの構造 `members`
 --
 
@@ -72,6 +93,15 @@ INSERT INTO `posts` (`id`, `message`, `member_id`, `reply_post_id`, `picture`, `
 --
 
 --
+<<<<<<< HEAD
+=======
+-- テーブルのインデックス `goods`
+--
+ALTER TABLE `goods`
+  ADD PRIMARY KEY (`id`);
+
+--
+>>>>>>> e10f27e20df9ddc13f771ba39afad4e985f9a9aa
 -- テーブルのインデックス `members`
 --
 ALTER TABLE `members`
@@ -88,6 +118,15 @@ ALTER TABLE `posts`
 --
 
 --
+<<<<<<< HEAD
+=======
+-- テーブルの AUTO_INCREMENT `goods`
+--
+ALTER TABLE `goods`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+>>>>>>> e10f27e20df9ddc13f771ba39afad4e985f9a9aa
 -- テーブルの AUTO_INCREMENT `members`
 --
 ALTER TABLE `members`

@@ -1,0 +1,224 @@
+/* 全ページ共通 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+html {
+    font-size: 16px;
+    font-family: "Noto Sans JP", sans-serif;
+    color: #333;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0 0 0 0;
+}
+p, li, td {
+    line-height: 1.7;
+}
+img {
+    max-width: 100%;
+}
+a:link {
+    color: #1D9BF0;
+    text-decoration: none;
+}
+a:visited {
+    color: #1D9BF0;
+    text-decoration: none;
+}
+a:hover {
+    color: #1D9BF0;
+    text-decoration: underline;
+}
+a:active {
+    color: #1D9BF0;
+    text-decoration: underline;
+}
+h2 {
+    border-left: 7px solid cornflowerblue;
+    margin: 20px 8%;
+    padding: 8px 10px;
+}
+
+/* 全ページ共通　ヘッダー */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: end;
+    margin: 0 30px;
+}
+nav li {
+    list-style:none;
+    background-color: cornflowerblue;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: transform 0.3s ease; /* アニメーションの時間と効果 */
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+}
+nav a:link {
+    color: white;
+    text-decoration: none;
+}
+nav a:visited {
+    color: white;
+    text-decoration: none;
+}
+nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+nav li:hover {
+    transform: scale(1.1); /* 1.1倍に拡大 */
+}
+nav a:active {
+    color: white;
+    text-decoration: underline;
+}
+header {
+    display: grid;
+    grid-template-rows: 1fr 50px;
+    align-items: flex-end;
+    border-bottom: 8px solid cornflowerblue;
+}
+h1 {
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
+    2px 3px 4px rgba(0, 0, 0, 0.5);
+    margin: 10px 30px;
+}
+
+/* 全ページ共通 メイン */
+main {
+    background-image: linear-gradient(120deg, #c2e9fb 0%, #a1c4fd 100%);
+    margin: 30px auto;
+    padding: 25px 25px 30px 25px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+/* 会員登録 */
+.required {
+    background-color: red;
+    color: white;
+}
+.error {
+    color: red;
+}
+
+/* 登録、確認、ログインページ */
+dl {
+    display: flex;
+    flex-direction: column; /* 垂直に配置 */
+    gap: 8px;
+}
+
+/* index、post_index */
+.name {
+    vertical-align: top;
+    font-weight: bold;
+    margin: 5px 10px;
+    font-size: 1.1rem;
+}
+main hr {
+    margin: 15px -25px;
+    border: none; /* ボーダーをなしに */
+    height: 0.5px; /* 0.5pxの細さ */
+    background-color: #8B99A6; /* 線の色 */
+}
+form {
+    margin: -20px 20px 30px 20px;
+}
+.paging{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    padding: 0;
+    margin: -15px 0 30px 0;
+}
+
+    /* グリッドレイアウト */
+    .msg {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+        "mem_pic name post_pic"
+        "mem_pic content post_pic"
+        "others others post_pic";
+    }
+    .mem_pic {
+        grid-area: mem_pic;
+    }
+    .name {
+        grid-area: name;
+    }
+    .post_pic {
+        grid-area: post_pic;
+    }
+    .post_pic img {
+        max-height: 200px;
+        width: auto;
+    }
+    .others {
+        grid-area: others;
+    }
+
+/* モバイル対応 */
+@media (max-width: 767px) {
+    nav ul {
+        margin: 0 10px;
+        padding: 0;
+        justify-content: center;
+    }
+    nav li {
+        font-size: 0.7rem;
+        padding: 10px 10px;
+    }
+    nav li:active {
+        transform: scale(1.1); /* 1.1倍に拡大 */
+    }
+    main {
+        padding: 0 4%;
+        margin: 20px auto;
+        max-width: 90%;
+    }
+    main hr {
+        margin: 15px -15px;
+        border: none; /* ボーダーをなしに */
+        height: 0.5px; /* 0.5pxの細さ */
+        background-color: #8B99A6; /* 線の色 */
+    }
+    form {
+        margin: 0px 20px 30px 20px;
+        padding: 10px 0 0 0;
+    }
+    form textarea {
+        width: 95%;
+    }
+    .post dd {
+        margin-left: 15px;
+    }
+    .post_pic {
+        text-align: right;
+    }
+    .post_pic img {
+        max-height: 200px;
+        width: auto;
+    }
+        /* グリッドレイアウト */
+        .msg {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: auto auto auto auto auto;
+            grid-template-areas: 
+            "mem_pic name"
+            "mem_pic content"
+            ". content"
+            "post_pic post_pic"
+            "others others";
+        }
+
+
+}
